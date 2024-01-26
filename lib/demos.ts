@@ -6,12 +6,12 @@ export type Item = {
 
 export const demos: { name: string; items: Item[] }[] = [
   {
-    name: 'Layouts',
+    name: 'First contact',
     items: [
       {
-        name: 'Nested Layouts',
+        name: 'First Project',
         slug: 'layouts',
-        description: 'Create UI that is shared across routes',
+        description: 'Learning how to use this template',
       },
       {
         name: 'Grouped Layouts',
@@ -22,6 +22,11 @@ export const demos: { name: string; items: Item[] }[] = [
         name: 'Parallel Routes',
         slug: 'parallel-routes',
         description: 'Render multiple pages in the same layout',
+      },
+      {
+        name: 'New Route',
+        slug: 'my-own-route',
+        description: 'Creating my own route, still exploring the template',
       },
     ],
   },

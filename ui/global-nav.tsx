@@ -7,7 +7,7 @@ import { useSelectedLayoutSegment } from 'next/navigation';
 import { MenuAlt2Icon, XIcon } from '@heroicons/react/solid';
 import clsx from 'clsx';
 import { useState } from 'react';
-import Byline from './byline';
+
 
 export function GlobalNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,13 +26,13 @@ export function GlobalNav() {
           </div>
 
           <h3 className="font-semibold tracking-wide text-gray-400 group-hover:text-gray-50">
-            App Router
+            Custom NavBar
           </h3>
         </Link>
       </div>
       <button
         type="button"
-        className="group absolute right-0 top-0 flex h-14 items-center gap-x-2 px-4 lg:hidden"
+        className="group absolute right-0 top-0 flex h-14 items-center gap-x-2 px-4 lg:hidden bg-green-600"
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="font-medium text-gray-100 group-hover:text-gray-400">
@@ -51,15 +51,15 @@ export function GlobalNav() {
           hidden: !isOpen,
         })}
       >
-        <nav className="space-y-6 px-2 pb-24 pt-5">
+        <nav className="space-y-6 px- pb-24 pt-5">
           {demos.map((section) => {
             return (
               <div key={section.name}>
-                <div className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-gray-400/80">
+                <div className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-gray-400/40">
                   <div>{section.name}</div>
                 </div>
 
-                <div className="space-y-1">
+                <div>
                   {section.items.map((item) => (
                     <GlobalNavItem key={item.slug} item={item} close={close} />
                   ))}
@@ -68,7 +68,6 @@ export function GlobalNav() {
             );
           })}
         </nav>
-        <Byline className="absolute hidden sm:block" />
       </div>
     </div>
   );
@@ -91,7 +90,7 @@ function GlobalNavItem({
       className={clsx(
         'block rounded-md px-3 py-2 text-sm font-medium hover:text-gray-300',
         {
-          'text-gray-400 hover:bg-gray-800': !isActive,
+          'text-gray-400 hover:bg-green-600': !isActive,
           'text-white': isActive,
         },
       )}
